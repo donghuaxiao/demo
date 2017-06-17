@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+    <style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style>
+    <style type="text/css">.uib-time input{width:50px;}</style>
+    <style type="text/css">
+        .uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-datepicker-popup.dropdown-menu{display:block;}.uib-button-bar{padding:10px 9px 2px;}
+    </style>
+
+    <meta charset="utf-8"></meta>
+    <title>Dashboard | SmartAdmin AngularJS</title>
+    <meta name="description" content="UnpaidVersion"></meta>
+    <meta name="author" content=""></meta>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></meta>
+
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css"></link>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.css"></link>
+
+    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.css"></link>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.css"></link>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.css"></link>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-angular.css"></link>
+
+    <!-- SmartAdmin RTL Support (Not using RTL? Disable the CSS below to save bandwidth) -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.css"></link>
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/demo.css"></link>
+
+</head>
+<body class="desktop-detected smart-style-4">
+
+<!-- ui-view container -->
+
+<!-- uiView: root -->
+<div style=""  data-ui-view="root" data-autoscroll="false"><!-- HEADER -->
+    <header th:replace="header :: header" class="" id="header">
+
+    </header>
+    <!-- END HEADER -->
+
+
+    <!-- Left panel : Navigation area -->
+    <!-- Note: This width of the aside area can be adjusted through LESS variables -->
+    <aside th:replace="navigation :: navigation" >
+    </aside>
+
+</div>
+
+<!-- Use for production after building the project with grunt -->
+<script src="js/ga.js" async="" type="text/javascript"></script>
+<script src="js/vendor.js"></script>
+
+<!-- Your GOOGLE ANALYTICS CODE Below -->
+<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-43548732-3']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+
+</script>
+
+
+<div id="divSmallBoxes"></div>
+<div id="divMiniIcons"></div>
+<div id="divbigBoxes"></div>
+<div style="display: none; position: absolute;" id="flotTip"></div>
+<div style="display: none; left: 698px; top: 538px;" class="jvectormap-label">United States of America: 4977 visits
+</div>
+</body>
+</html>

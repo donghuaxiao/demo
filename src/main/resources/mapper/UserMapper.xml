@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ericsson.mapper.UserMapper">
+
+    <resultMap id="UserMap" type="com.ericsson.domain.User">
+        <result property="id" column="ID"/>
+        <result property="name" column="F_NAME"/>
+        <result property="age" column="AGE" />
+        <result property="email" column="Email"/>
+    </resultMap>
+
+    <select id="findById" parameterType="int" resultMap="UserMap">
+        SELECT * FROM T_USERS WHERE ID=#{id}
+    </select>
+
+</mapper>

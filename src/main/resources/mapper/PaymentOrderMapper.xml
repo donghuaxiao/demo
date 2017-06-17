@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ericsson.mapper.PaymentOrderMapper">
+    <select id="queryPaymentOrder" resultType="com.ericsson.domain.PaymentOrderVO" parameterType="map" >
+        SELECT tpo.PAYMENT_ORDER_ID AS paymentOrderId, tpo.ORDER_ID as orderId, tpo.CITY as city, tpo.USER_ID as orderUser,
+        tpo.ORDER_TIME as orderTime, tpo.PAID_TIME as paidTime, tpo.AMOUNT as amount,tpo.STATUS AS status,  tc.title as channel,
+        tpu.title as merchant, ts.title as service, tpo.SETTLE_RATE as settleRate, tpo.FEE as fee
+        FROM T_PAYMENT_ORDER tpo
+        LEFT JOIN T_PAYMENT_SERVICE ts ON tpo.SERVICE_ID = ts.SERVICE_ID
+        LEFT JOIN T_PAYMENT_USER tpu ON tpo.RCV_USER_ID = tpu.USER_ID
+        LEFT JOIN T_CHANNEL tc ON tpo.CHANNEL_ID = tc.CHANNEL_ID
+        where
+        <if test="paymentOrderId != null">
+            tpo.PAYMENT_ORDER_ID = #{paymentOrderId}
+        </if>
+        <if test="orderId != null">
+            tpo.ORDER_ID = #{orderId}
+        </if>
+    </select>
+</mapper>
